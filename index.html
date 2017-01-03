@@ -1,19 +1,40 @@
 <!DOCTYPE html>
-<html lang="fr-fr">
+<html lang="fr-FR">
   <head>
     <meta charset="UTF-8">
-    <title>Emploi du temps M1Info</title>
+    <title>Emploi du temps M1 Info</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link rel="stylesheet" href="css/normalize.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/cayman.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <script src="js/ical.min.js"></script>
+    <script src="js/nanoajax.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/edt-m1info.js"></script>
+    <script src="js/FileSaver.js"></script>
+    <style>
+      #options {
+        text-align: left;
+        display: inline-block;
+        margin-top: 1em;
+      }
+
+      #options input[type=checkbox] {
+         display: inline;
+         width: auto;
+         margin: 0;
+         height: auto;
+      }
+    </style>
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Emploi du temps M1Info</h1>
+      <h1 class="project-name">Emploi du temps M1 Info</h1>
       <h2 class="project-tagline">Synchroniser l'emploi du temps de M1 Informatique avec son agenda</h2>
       <a href="edt.ical" class="btn" download>Télécharger le .ical</a>
+      <a href="javascript:customize()" class="btn">Personnaliser</a>
     </section>
 
     <section class="main-content">
@@ -21,19 +42,22 @@
       <p>On trouvera ici cet emploi du temps au <strong>format ICAL</strong>, permettant de l'importer via Google Agenda par exemple.</p>
 
       <h3>Comment qu'on fait mdr???</h3>
-      <p>L'URL du calendrier à importer est <code>http://edt-m1info.edgar-fournival.fr/edt.ical</code></p>
+      <p>L'URL du calendrier (complet) à importer est <code>http://edt-m1info.edgar-fournival.fr/edt.ical</code></p>
       <ul>
         <li><a href="https://support.google.com/calendar/answer/37118?hl=fr">Importer des événements dans Google Agenda</a></li>
         <li><a href="https://support.google.com/calendar/answer/151674?hl=fr&ref_topic=3417927">Synchroniser Google Agenda avec un téléphone ou une tablette</a></li>
         <li><a href="https://support.google.com/calendar/answer/99358?hl=fr">Synchroniser vos agendas avec Apple Calendrier</a></li>
         <li><a href="https://play.google.com/store/apps/details?id=jp.classmethod.us.android.icalsync&hl=fr">L'application iCalSync sur Google Play</a></li>
       </ul>
+      <p>Conseil : créer un nouvel agenda dans Google Agenda et le recréer à chaque mise à jour.</p>
 
       <h3>T'as rentré tous les cours à la main ?</h3>
       <p>Non : <a href="https://github.com/efournival/edt2ical">https://github.com/efournival/edt2ical</a></p>
 
       <h3>Historique</h3>
       <ul>
+        <li>03/01/2017 : possibilité de filtrer les cours/options (idée de Viktor)</li>
+        <li>03/01/2017 : correction de TPs ajoutés par erreur par l'utilitaire de conversion</li>
         <li>18/12/2016 : dernière version</li>
         <li>16/11/2016 : dernière version</li>
         <li>14/11/2016 : dernière version (deuxième semestre)</li>
@@ -50,7 +74,7 @@
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/efournival/edt2ical">edt2ical</a> est développé par <a href="https://github.com/efournival">efournival</a>.</span>
-        <span class="site-footer-credits">Cette page a été généré par <a href="https://pages.github.com">GitHub Pages</a> en utilisant <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> par <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        <span class="site-footer-credits">Cette page a été généré par <a href="https://pages.github.com">GitHub Pages</a> en utilisant le <a href="https://github.com/jasonlong/cayman-theme">thème Cayman</a> par <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
     </section>
 
