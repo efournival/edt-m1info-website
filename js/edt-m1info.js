@@ -1,12 +1,11 @@
 "use strict";
 
 var opt;
-var mandatory = ["Opti. Combi.", "Prog.Paral"];
+var mandatory = ["Opti. Combi.", "Prog.Paral", "EXAMEN PPD"];
 
 function clear(str) {
     // Bricolage
     str = str.replace(/Proba\ et\ Stat\./i, "Proba et Stat");
-    str = str.replace(/IA:Log\.Cont\.\ TD\ IA:Log\.Cont\./i, "IA:Log.Cont.");
     str = str.replace(/Opti\.Comb\./i, "Opti. Combi.");
 
     str = str.replace(/\s*salle\s*:\s*/i, "");
@@ -29,6 +28,7 @@ function getCourses(cal) {
 
     cal.getAllSubcomponents().forEach(function(e) {
         var name = clear(e.getFirstPropertyValue("summary"));
+        console.log(name +"|" + e.getFirstPropertyValue("summary"));
 
         if (courses.indexOf(name) === -1 && name.length > 0) {
             courses.push(name);
